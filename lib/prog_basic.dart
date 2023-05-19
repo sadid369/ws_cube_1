@@ -1,20 +1,23 @@
 void main(List<String> args) {
-  final user = User('sadid');
-  final user2 = User('sadid 2');
-  var sum2 = user.add(a: 9, b: 8);
-  var sum3 = user.add(a: 9, b: 10);
-  // var sum = User().add(a: 5, b: 6);
-  print('sum + $sum2 + $sum3');
+  Cube b = Cube();
+  b.wsFunc();
+  b.cubeFunc();
 }
 
-class User {
-  User(String name) {
-    print('Constructor Called Name $name');
+class Ws {
+  Ws() {
+    print('Ws obj created!!!');
   }
-
-  int add({required int a, required int b}) {
-    return a + b;
+  void wsFunc() {
+    print('Class Ws Function Called');
   }
+}
 
-  void printName() {}
+class Cube extends Ws {
+  Cube() {
+    print('Cube obj created!!!');
+  }
+  void cubeFunc() {
+    print('Class Cube Function Called');
+  }
 }
