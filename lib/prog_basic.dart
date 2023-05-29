@@ -1,52 +1,41 @@
-void main(List<String> args) {
-  HumanBeing humanBeing = HumanBeing();
-  humanBeing.hands();
+void main() {
+  var boy = Man(2);
+  var girl = Women(3);
+  boy.hands();
+  boy.eyes();
+  girl.eyes();
+  girl.hands();
 }
 
-class LivingBeing {
+abstract class HumanBeing {
+  int hansss;
+  HumanBeing(this.hansss);
+  void eyes();
   void hands() {
-    print('Used for eating');
+    print("Eating");
   }
 }
 
-class Fish extends LivingBeing {
+class Man extends HumanBeing {
+  Man(super.hansss);
+
   @override
-  void hands() {
-    print('Used for swimming');
+  void eyes() {
+    print('For Watching Movies');
   }
-}
 
-class HumanBeing extends LivingBeing {
   @override
   void hands() {
     super.hands();
-    print('Used for Clapping!!');
+    print("For Driving");
   }
 }
 
-class Ex extends HumanBeing {}
+class Women extends HumanBeing {
+  Women(super.hansss);
 
-
-// class Ws {
-//   Ws() {
-//     print('Ws obj created!!!');
-//   }
-//   void wsFunc() {
-//     print('Class Ws Function Called');
-//   }
-// }
-
-// class Cube extends Ws {
-//   Cube() {
-//     print('Cube obj created!!!');
-//   }
-//   void cubeFunc() {
-//     print('Class Cube Function Called');
-    
-//   }
-
-//   // @override
-//   // void wsFunc() {
-//   //   print('ddddddddd');
-//   // }
-// }
+  @override
+  void eyes() {
+    print("For Watching Web Series");
+  }
+}
