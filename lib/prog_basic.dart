@@ -1,10 +1,19 @@
 void main() {
-  var boy = Man(2);
-  var girl = Women(3);
-  boy.hands();
-  boy.eyes();
-  girl.eyes();
-  girl.hands();
+  void setFunction(Function func) {
+    func();
+  }
+
+  Function getFunction() {
+    return () {
+      print("Sadid");
+    };
+  }
+
+  setFunction(() {
+    print('Called Set Fun');
+  });
+  Function fun = getFunction();
+  fun();
 }
 
 abstract class HumanBeing {
